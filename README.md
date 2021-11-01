@@ -172,10 +172,14 @@ Build By Saddam Arbaa Project inspired by [Instagram] https://www.instagram.com/
 
 # Screenshots
 
- ## Home Page
-![image](https://user-images.githubusercontent.com/51326421/139676087-d00e2c9d-d61d-4fe6-8d1c-f164f0c8949e.png)
+ ## Responsive on large screens - Home Page
+![image](https://user-images.githubusercontent.com/51326421/139720183-171b6ff0-f189-4813-b444-28293fdcc96d.png)
 
 
+
+ ##  Responsive on mobile and tablet screens
+
+![image](https://user-images.githubusercontent.com/51326421/139720315-4415602a-6e3a-4240-bfef-511b22f4344e.png)
 
 
 
