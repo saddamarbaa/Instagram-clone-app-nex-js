@@ -65,9 +65,13 @@ const SignUpPageComponent: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		if (logIn) {
-			return <LogInScreen />;
-		}
+		const redirectToLogin = () => {
+			if (logIn) {
+				return <LogInScreen />;
+			}
+		};
+
+		redirectToLogin();
 	}, [setLogIn]);
 
 	if (logIn) {
@@ -85,7 +89,7 @@ const SignUpPageComponent: React.FC = () => {
 					photoURL: "/images/tem-img.png",
 				});
 
-				router.push("/");
+				router.push("/login");
 			})
 			.catch((error) => {
 				// An error happened.
@@ -179,7 +183,7 @@ const SignUpPageComponent: React.FC = () => {
 							<input
 								id='email'
 								className={` ${
-									errors.username ? "is-invalid" : "custom-input"
+									errors.email ? "is-invalid" : "custom-input"
 								}`}
 								type='text'
 								placeholder={errors.email ? "" : "Email"}
@@ -212,7 +216,9 @@ const SignUpPageComponent: React.FC = () => {
 									errors.username ? "is-invalid" : "custom-input"
 								}`}
 								type='password'
-								placeholder={errors.password ? "" : "Confirm Password"}
+								placeholder={
+									errors.confirmPassword ? "" : "Confirm Password"
+								}
 								{...register("confirmPassword")}
 							/>
 						</div>

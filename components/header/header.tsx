@@ -5,13 +5,33 @@ import {
 	SearchIcon,
 	ChatIcon,
 	BellIcon,
+	PlusCircleIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
+import React, { useState } from "react";
+
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { selectUser } from "../../features/user/userSlice";
+
+import {
+	setShowComposeState,
+	selectSendPost,
+} from "../../features/sendPost/sendPostSlice";
+
 import { getRandomIntNumberBetween } from "../../lib/api-util";
+import { ModalOverlay } from "../ui/modalOverlay";
 
 const Header: React.FunctionComponent = () => {
+	const dispatch = useAppDispatch();
+	const user = useAppSelector(selectUser);
+	const composeState = useAppSelector(selectSendPost);
+
+	const showCompose = () => {
+		dispatch(setShowComposeState());
+	};
+
 	return (
 		<header className='sticky top-0 z-50 bg-white   py-4   border-b-2 border-gray-200 '>
 			<div className=' max-w-5xl mx-auto flex items-center justify-between px-4 '>
@@ -47,6 +67,11 @@ const Header: React.FunctionComponent = () => {
 				</div>
 				<div className='flex items-center space-x-6'>
 					<HomeIcon className='h-7 cursor-pointer  ' />
+					<PlusCircleIcon
+						className='h-7 cursor-pointer  '
+						onClick={showCompose}
+					/>
+
 					<div className='relative'>
 						<BellIcon className='h-7 cursor-pointer ' />
 
@@ -56,11 +81,12 @@ const Header: React.FunctionComponent = () => {
 					</div>
 					<ChatIcon className='h-7 cursor-pointer   ' />
 					<HeartIcon className='h-7 cursor-pointer' />
-
 					<div className='hidden lg:inline-flex'>
 						<Image
 							className='rounded-full cursor-pointer'
-							src='/friends/saddam.jpg'
+							src={
+								user?.photoURL ? user?.photoURL : "/images/tem-img.png"
+							}
 							alt='Picture of the author'
 							width={35}
 							height={35}
@@ -69,6 +95,8 @@ const Header: React.FunctionComponent = () => {
 					</div>
 				</div>
 			</div>
+
+			{composeState && <ModalOverlay />}
 		</header>
 	);
 };

@@ -13,6 +13,7 @@ import SignUpScreen from "../../pages/sign-up";
 type UserSubmitForm = {
 	email: string;
 	password: string;
+	acceptTerms: boolean;
 };
 
 const LogInPageComponent: React.FC = () => {
@@ -53,10 +54,14 @@ const LogInPageComponent: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		if (signIn) {
-			return <SignUpScreen />;
-		}
-	}, [setSignIn]);
+		const redirectToSignUp = () => {
+			if (signIn) {
+				return <SignUpScreen />;
+			}
+		};
+
+		redirectToSignUp();
+	}, [signIn]);
 
 	if (signIn) {
 		return <SignUpScreen />;
@@ -130,7 +135,7 @@ const LogInPageComponent: React.FC = () => {
 							<input
 								id='email'
 								className={` ${
-									errors.username ? "is-invalid" : "custom-input"
+									errors.email ? "is-invalid" : "custom-input"
 								}`}
 								type='text'
 								placeholder={errors.email ? "" : "Email"}
@@ -144,7 +149,7 @@ const LogInPageComponent: React.FC = () => {
 							<input
 								id='password'
 								className={` ${
-									errors.username ? "is-invalid" : "custom-input"
+									errors.password ? "is-invalid" : "custom-input"
 								}`}
 								type='password'
 								placeholder={errors.password ? "" : "Password"}
@@ -267,8 +272,3 @@ const LogInPageComponent: React.FC = () => {
 	);
 };
 export default LogInPageComponent;
-
-
-
-
-// https://www.bezkoder.com/react-hook-form-typescript/
