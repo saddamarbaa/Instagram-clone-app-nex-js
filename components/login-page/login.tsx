@@ -1,7 +1,6 @@
 /** @format */
 
 import Image from "next/image";
-import { auth, provider } from "../../config/firebase";
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -9,6 +8,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 import SignUpScreen from "../../pages/sign-up";
+import {
+	setLogInState,
+	setLogOutState,
+	selectUser,
+} from "../../features/user/userSlice";
+
+import { auth, provider } from "../../config/firebase";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
 type UserSubmitForm = {
 	email: string;
@@ -17,6 +24,7 @@ type UserSubmitForm = {
 };
 
 const LogInPageComponent: React.FC = () => {
+	const dispatch = useAppDispatch();
 	const autoScrollToBottomRef = useRef<HTMLDivElement>(null);
 	const [signIn, setSignIn] = useState<boolean>(false);
 	const router = useRouter();
@@ -74,7 +82,18 @@ const LogInPageComponent: React.FC = () => {
 			.signInWithEmailAndPassword(data.email, data.password)
 			.then((signInedUser) => {
 				// signIn successful.
-				// console.log(signInedUser);
+				// console.log(signInedUser.user);
+
+				const exitUserName = data.email.split("@");
+				dispatch(
+					setLogInState({
+						displayName: exitUserName[0],
+						uid: "",
+						email: data.email,
+						photoURL: "/images/tem-img.png",
+					}),
+				);
+
 				router.push("/");
 			})
 			.catch((error) => {
