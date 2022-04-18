@@ -1,10 +1,7 @@
-<!-- @format -->
-
 # Instagram Clone
 
 Building Instagram Clone App with React Js, Next Js, TypeScript, Redux, Tailwind CSS,
-Heroicons, Firebase, Vercel Hosting,
-with complete user authentication (a mobile-friendly).
+Heroicons, Firebase, Vercel Hosting, with complete user authentication (a mobile-friendly).
 
 # Table of contents
 
@@ -68,9 +65,6 @@ with complete user authentication (a mobile-friendly).
 # Contributing
 
 Contributions are always welcome!
-
-# Related_Projects
-
 
 
 # Related_Projects
