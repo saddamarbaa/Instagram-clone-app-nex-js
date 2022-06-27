@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<React.Fragment>
 			<Provider store={store}>
 				<Head>
-					<title>Facebook Clone app</title>
+					<title> Instagram Clone app</title>
 					<meta
 						name='viewport'
 						content='width=device-width, initial-scale=1'
