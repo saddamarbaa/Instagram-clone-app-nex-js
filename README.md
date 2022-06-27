@@ -1,10 +1,7 @@
-<!-- @format -->
-
 # Instagram Clone
 
 Building Instagram Clone App with React Js, Next Js, TypeScript, Redux, Tailwind CSS,
-Heroicons, Firebase, Vercel Hosting,
-with complete user authentication (a mobile-friendly).
+Heroicons, Firebase, Vercel Hosting, with complete user authentication (a mobile-friendly).
 
 # Table of contents
 
@@ -69,26 +66,21 @@ with complete user authentication (a mobile-friendly).
 
 Contributions are always welcome!
 
+
 # Related_Projects
 
-### Facebook Clone App with React Js + Next Js + TypeScript + Redux + Styled Components
-
-# TODO
-
-<!--
-
-
+###  Facebook Clone App built with React Js + Next Js + TypeScript + Redux + Styled Components
 
 ###  <a href="https://github.com/saddamarbaa/facebook-clone-app-nex-js"> Github Repo </a>
-###  <a href="https://facebook-clone-app-nex-js.vercel.app/">LIVE DEMO</a> -->
+###  <a href="https://facebook-clone-app-nex-js.vercel.app/">LIVE DEMO</a> 
 
-### Airbnb Clone App with React Js + Next Js + Redux + Tailwind CSS
+### Airbnb Clone App built with React Js + Next Js + Redux + Tailwind CSS
 
 ### <a href="https://github.com/saddamarbaa/airbnb-clone-app-nex-js"> Github Repo </a>
 
 ### <a href="https://airbnb-clone-app-nex-js.vercel.app/">LIVE DEMO</a>
 
-### Amazon Clone App with React Js + Redux + Styled Components
+### Amazon Clone App built with React Js + Redux + Styled Components
 
 ### <a href="https://github.com/saddamarbaa/amazon-clone-app"> Github Repo </a>
 
