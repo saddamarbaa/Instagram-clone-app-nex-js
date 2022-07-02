@@ -82,7 +82,7 @@ const Feeds: React.FunctionComponent = () => {
 					})}
 			</div>
 
-			{/* Post */}
+			{/* @ts-ignore */}
 			<FlipMove>
 				{post?.map((props: any) => {
 					return (
